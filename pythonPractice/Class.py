@@ -88,7 +88,7 @@ mc.add(100,200) """
 
 ## Creating multiple objects for one class
 
-class MyClass:
+"""class MyClass:
     def display(self):
         print("Good morning")
 
@@ -128,7 +128,150 @@ print(c1 is c2)  # False
 print(c1 is c3)  # True
 
 print(c1 is not c2)
-print(c1 is not c3)
+print(c1 is not c3)"""
+
+### Creating Constructor
+
+"""class MyClass:
+    def m1(self):
+        print("good morning")
+    def __init__(self):
+        print("this i constructor")
+
+c=MyClass()
+c.m1()"""
+
+#### Converting local variables into class variables
+
+"""class MyClass:
+    def values(self,val1,val2):  # val1 & val2 are local variable
+        print(val1)  # here local variable 10
+        print(val2)   # here local variable 10
+        self.val1=val1
+        self.val2=val2
+
+    def add(self):
+         print(self.val1+self.val2)   # here class variable 30
+
+mc=MyClass()
+mc.values(10,20)
+mc.add()
+
+## Converting local variables into class variables  Constructor
+
+class MyClass:
+    def __init__(self,val1,val2):  # val1 & val2 are local variable
+        print(val1)  # here local variable 10
+        print(val2)   # here local variable 10
+        self.val1=val1
+        self.val2=val2
+
+    def add(self):
+         print(self.val1+self.val2)   # here class variable 30
+
+mc=MyClass(100,200)
+mc.add()"""
+
+## how to call current class method in another metod
+
+"""class MyClass:
+    def m1(self):
+        print("this is m1 method")
+        self.m2(100)
+
+    def m2(self,a):
+        print("this is m2 method",a)
+
+c1=MyClass()
+c1.m1()"""
+
+## Constructor with arguments
+
+"""class MyClass:
+    name ="Kumar"
+    def __init__(self,name):
+        print(name)  # Constructor argument local
+        print(self.name) # represent class variables
+
+c=MyClass("pavan")
+
+# another example
+
+class Emp:
+    def __init__(self,eid,ename,esal):
+        self.eid=eid
+        self.ename=ename
+        self.esal=esal
+    def display(self):
+        print("Empid: {}  EmpName :{} Empsal: {} " .format(self.eid,self.ename,self.esal))
+        print("Empid: %d  EmpName : %s Empsal: %g " % (self.eid, self.ename, self.esal))
+
+el=Emp(101,'venki',85000)
+el.display() """
+
+### __str__
+
+"""class MyClass:
+    pass
+c = MyClass() # c is the reference variable 
+print(c)   # <__main__.MyClass object at 0x0000000002519370>
+
+class MyClass:
+    def __str__(self):
+        return "Welcome"  # allow only string value 
+
+c=MyClass() # c is the reference variable 
+print(c)    # <__main__.MyClass object at 0x0000000002519370> welcome  """
+
+"""class Emp:
+    def __init__(self,eid,ename,esal):
+        self.eid=eid
+        self.ename=ename
+        self.esal=esal
+    def __str__(self):
+        return ("Empid: {}  EmpName :{} Empsal: {} " .format(self.eid,self.ename,self.esal))
+
+
+el=Emp(101,'venki',85000)
+print(el) """
+
+
+## __del__
+
+"""class MyClass:
+    def __del__(self):
+        print("Destroyed")
+
+c1=MyClass()
+c2=MyClass()
+
+del c1 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
